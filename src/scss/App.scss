@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200&display=swap');
+
+%flex{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    background-image: url('.././images/dou-sha-WfCmNom4M4Q-unsplash.jpg');
+    background-image: url('.././images/clowdy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0,1);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    min-height: 100vh;
+    color: rgb(255, 255, 255);
+
+    .header{
+        @extend %flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+     
+        .logo{
+            min-width: 200px;
+           // font-style: italic; 
+        }
+        .form{
+            width: 70vw;
+        }
+    }
+
+
+    .main{
+        background-blend-mode: screen;
+        .city_name{
+            @extend %flex;
+            // margin: 20px auto 10px auto;
+            font-size: 3rem;
+            font-weight: 500;
+           
+           .main_logo{
+            filter:contrast(200%);
+           }
+        }
+        .temp{ 
+            font-size: 5rem;
+            font-family: 'Encode Sans SC', sans-serif;
+            font-weight: 200;
+        }
+    
+        .description{
+            font-weight: 400;
+            font-size: 2rem;
+            color: darkgray;
+        }
+    
+    }
+   
+}

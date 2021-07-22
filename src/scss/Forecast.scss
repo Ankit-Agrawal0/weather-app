@@ -1,0 +1,47 @@
+html{
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+.Hourly{
+
+    .map{
+        display: flex;
+        overflow-x: scroll;
+        white-space: nowrap;
+        scrollbar-width: thin;
+
+        .hour{
+            display: flex;
+            flex-direction: column;
+
+            .icon{
+                filter:contrast(200%);
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 10px;
+            
+        }
+        
+/* Track */
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+            border-radius: 10px;
+            border-radius: 10px;
+           
+        }
+ 
+/* Handle */
+        &::-webkit-scrollbar-thumb {
+            width: 10px !important;
+            border-radius: 10px;
+            background: rgba(88, 88, 88, 0.534); 
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        }
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(73, 73, 73, 0.212); 
+        }
+    }
+    
+}
