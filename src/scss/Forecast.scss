@@ -1,6 +1,10 @@
 html{
     scroll-behavior: smooth;
     user-select: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+     }
 }
 
 .Hourly{
@@ -10,12 +14,25 @@ html{
         overflow-x: scroll;
         white-space: nowrap;
         scrollbar-width: thin;
+        border-bottom: 2px solid #565454;
+        border-top:  2px solid #565454;
+        padding: 10px;
+       
 
         .hour{
             display: flex;
             flex-direction: column;
+            height: 100px;
+            margin: 10px;
 
+            &:hover{
+                transform: scale(1.2);
+            }
+            span, p{
+                font-size: small;
+            }
             .icon{
+                height: 70px;
                 filter:contrast(200%);
             }
         }
@@ -43,5 +60,27 @@ html{
             background: rgba(73, 73, 73, 0.212); 
         }
     }
-    
+   
 }
+.map2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .day{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        border-bottom: 1px solid #565454;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+
+        .icon{
+            height: 55px;
+            filter:contrast(200%);
+        }
+    }
+ }

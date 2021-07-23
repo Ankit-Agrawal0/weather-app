@@ -9,6 +9,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.7s;
+   
 }
 
 .App{
@@ -21,13 +23,19 @@
     text-align: center;
     min-height: 100vh;
     color: rgb(255, 255, 255);
-
+    height: 100vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+     }
     .header{
         @extend %flex;
         flex-wrap: wrap;
         justify-content: space-around;
         padding: 20px;
-     
+        &:hover{
+            transform: scale(1.08);
+        }
         .logo{
             min-width: 200px;
            // font-style: italic; 
@@ -45,15 +53,33 @@
             // margin: 20px auto 10px auto;
             font-size: 3rem;
             font-weight: 500;
-           
+            &:hover{
+                transform: scale(1.08);
+            }
            .main_logo{
             filter:contrast(200%);
+            animation: icon 1s linear infinite;
            }
+           @keyframes icon {
+            0%{
+                transform: scale(1);
+            }
+        
+            50%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
         }
         .temp{ 
             font-size: 5rem;
             font-family: 'Encode Sans SC', sans-serif;
             font-weight: 200;
+            &:hover{
+                transform: scale(1.2);
+            }
         }
     
         .description{
@@ -65,3 +91,7 @@
     }
    
 }
+
+
+
+

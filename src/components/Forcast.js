@@ -6,6 +6,11 @@ import ".././scss/Forecast.scss";
 const Forcast = ({ lat, lon }) => {
     const [forecast, setForecast] = useState('')
     // console.log(lat,  lon);
+   
+//    console.log(forecast);
+   
+  
+   useEffect(() => {
     const getForecast = async() => {
         const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=eb4a9ef0a88caa72df8d36773173ddb3&units=metric`
         const response= await fetch(url);
@@ -13,10 +18,6 @@ const Forcast = ({ lat, lon }) => {
         setForecast(data)
         // console.log(url);
    }
-//    console.log(forecast);
-   
-  
-   useEffect(() => {
        getForecast()
        
    }, [lat, lon])
@@ -25,7 +26,7 @@ const Forcast = ({ lat, lon }) => {
             {forecast &&
             <div>
                <Hourly details={forecast.hourly}/>
-               <Daily />
+               <Daily details={forecast.daily}/>
             </div>
         }
      

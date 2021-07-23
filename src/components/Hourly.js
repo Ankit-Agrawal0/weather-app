@@ -8,7 +8,7 @@ const Hourly = ({ details}) => {
     }
     return (
         <div className='Hourly'>
-            {console.log(details)}
+            {/* {console.log(details)} */}
            
             <div className="map">
                 {  details.map( (elem,ind) => (

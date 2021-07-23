@@ -9,21 +9,26 @@ const Weather = () => {
     const [lat, setLat] = useState('')
     const [lon, setLon] = useState("")
     const [disabled, setDisabled] = useState(true)
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=eb4a9ef0a88caa72df8d36773173ddb3&units=metric
-    `;
-    const getData = async() => {
-         const response= await fetch(url);
-         const data = await response.json();
-         setWeather(data);
-        
-    }
+   
     const error =  {
         "cod": "404",
         "message": "city not found"
         };
 
     // console.log(weather);
-    const geolocation = ()=>{
+  
+ 
+  
+    useEffect(() => {
+        const getData = async() => {
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=eb4a9ef0a88caa72df8d36773173ddb3&units=metric
+            `;
+            const response= await fetch(url);
+            const data = await response.json();
+            setWeather(data);
+           
+       }
+       const geolocation = ()=>{
         if (weather !== "" && weather.message !== error.message ) {
             setLat(weather.coord.lat)
             setLon(weather.coord.lon)
@@ -31,17 +36,25 @@ const Weather = () => {
             // console.log(`longitude- ${lon}`);
         } 
     }
- 
-  
-    useEffect(() => {
         getData();
         geolocation()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[city])
-    
     useEffect(() => {
+        input !== '' ? setDisabled(false) : setDisabled(true)
+    }, [input])
+    useEffect(() => {
+        const geolocation = ()=>{
+            if (weather !== "" && weather.message !== error.message ) {
+                setLat(weather.coord.lat)
+                setLon(weather.coord.lon)
+                // console.log(`latitude- ${lat}`);
+                // console.log(`longitude- ${lon}`);
+            } 
+        }
         geolocation()
-        input !== '' && setDisabled(false)
        
+
     })
   
     const handleCityName = (e) =>{
