@@ -6,81 +6,118 @@ html{
         display: none;
      }
 }
+.forecast{
 
-.Hourly{
 
-    .map{
-        display: flex;
-        overflow-x: scroll;
-        white-space: nowrap;
-        scrollbar-width: thin;
-        border-bottom: 2px solid #565454;
-        border-top:  2px solid #565454;
-        padding: 10px;
-       
+    .Hourly{
 
-        .hour{
+        .map{
+            display: flex;
+            overflow-x: scroll;
+            white-space: nowrap;
+            scrollbar-width: thin;
+            border-bottom: 2px solid #565454;
+            border-top:  2px solid #565454;
+            padding: 10px;
+        
+
+            .hour{
+                display: flex;
+                flex-direction: column;
+                height: 100px;
+                margin: 10px;
+
+                &:hover{
+                    transform: scale(1.2);
+                }
+                span, p{
+                    font-size: small;
+                }
+                .icon{
+                    height: 70px;
+                    filter:contrast(200%);
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 10px;
+                
+            }
+            
+    /* Track */
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+                border-radius: 10px;
+                border-radius: 10px;
+            
+            }
+    
+    /* Handle */
+            &::-webkit-scrollbar-thumb {
+                width: 10px !important;
+                border-radius: 10px;
+                background: rgba(88, 88, 88, 0.534); 
+                box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+            }
+            &::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(73, 73, 73, 0.212); 
+            }
+        }
+    
+    }
+    .daily{
+        .map2{
             display: flex;
             flex-direction: column;
-            height: 100px;
-            margin: 10px;
+            align-items: center;
+            .day{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 90vw;
+                border-bottom: 1px solid #565454;
 
-            &:hover{
-                transform: scale(1.2);
+                &:hover{
+                    transform: scale(1.05);
+                }
+
+                .icon{
+                    height: 55px;
+                    filter:contrast(200%);
+                }
             }
-            span, p{
-                font-size: small;
-            }
-            .icon{
-                height: 70px;
-                filter:contrast(200%);
-            }
-        }
-        &::-webkit-scrollbar {
-            width: 10px;
-            
-        }
-        
-/* Track */
-        &::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-            border-radius: 10px;
-            border-radius: 10px;
-           
-        }
- 
-/* Handle */
-        &::-webkit-scrollbar-thumb {
-            width: 10px !important;
-            border-radius: 10px;
-            background: rgba(88, 88, 88, 0.534); 
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-        }
-        &::-webkit-scrollbar-thumb:window-inactive {
-            background: rgba(73, 73, 73, 0.212); 
         }
     }
-   
+
+    .day_details{
+        // .others{
+
+        // }
+        .humidity , .wind{
+            display: flex;
+            flex-direction: column;
+            div{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-direction: row;
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    #humidity_value{
+                        font-size: 60px;
+                    }
+
+                    .windmill{
+                        width: 30vw;
+                        height: 150px;
+
+                    }
+
+                }
+            }
+        }
+    }
 }
-.map2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .day{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 90vw;
-        border-bottom: 1px solid #565454;
-
-        &:hover{
-            transform: scale(1.05);
-        }
-
-        .icon{
-            height: 55px;
-            filter:contrast(200%);
-        }
-    }
- }
