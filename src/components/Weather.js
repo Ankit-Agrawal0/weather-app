@@ -74,7 +74,9 @@ const Weather = () => {
         lat !== "" && 
         <div className={weather.message ? 'ahhha' : weather.weather[0].main }>
         <div className="header">
-        <h1 className="logo">WEATHERPIEA</h1>
+        {/* <h1 className="logo">WEATHERPIEA</h1> */}
+        <img src="https://blog.flamingtext.com/blog/2021/07/27/flamingtext_com_1627365505_540980381.png" target='_logo' border="0" alt="WEATHERPIEA" title="Weatherpiea Logo" />
+
         {/* <form onSubmit={handleSubmit} className="input-section">
                     <input 
                         type="text" 
