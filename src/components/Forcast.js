@@ -59,14 +59,26 @@ const Forcast = ({ lat, lon, details }) => {
               <div className="day_details">
                 <div className="others">
                   <div>
-                    <span>Pressure</span>
-                    <span>precipitation</span>
+                  <i class="icon fas fa-cloud-rain"></i>
+                    <span>Precipitation <br /> {forecast.hourly[0].pop}%</span>
                   </div>
-                  <div></div>
+
+                  <div>
+                    <i class="icon fas fa-tachometer-alt"></i> 
+                  <span>Pressure <br />{forecast.hourly[0].pressure} hPa </span>
+                  </div>
+                  <div>
+                  <i class="icon fas fa-cloud"></i>
+                  <span>Cloudiness <br /> {forecast.hourly[0].clouds} %</span>
+                  </div>
+                  <div>
+                  <i class="icon fas fa-eye"></i>
+                    <span>Visibility <br />{forecast.hourly[0].visibility}m</span>
+                  </div>
                 </div>
-                -
+            
                 <div className="humidity">
-                  <h1>Comfort Level</h1>
+                  <h1 className='section'>Comfort Level</h1>
                   <div>
                     <div>
                       <span>Humidity</span>
@@ -75,13 +87,13 @@ const Forcast = ({ lat, lon, details }) => {
                       </span>
                     </div>
                     <div>
-                      <span>feels like: 25</span>
-                      <span>UV: 3</span>
+                      <span>feels like: {forecast.hourly[0].feels_like}°C</span>
+                      <span>UV: {forecast.hourly[0].uvi}</span>
                     </div>
                   </div>
                 </div>
                 <div className="wind">
-                  <h1>Wind</h1>
+                  <h1 className='section'>Wind</h1>
                   <div>
                     <div>
                       {/* <img src="https://www.pinclipart.com/picdir/big/73-735391_wind-turbine-blades-png-jpg-free-download-wind.png" alt="" /> */}
@@ -93,8 +105,8 @@ const Forcast = ({ lat, lon, details }) => {
                       {/* <img className='windmill' src="https://media1.giphy.com/media/SQSxROvkJ74zEtzB0Q/giphy.gif?cid=790b7611e25126e47859c545227353d0f6f7c2c8fdc3e835&rid=giphy.gif&ct=s"></img> */}
                     </div>
                     <div>
-                      <span>Direction: </span>
-                      <span>Speed: </span>
+                      <span>Direction: {forecast.hourly[0].wind_deg}°</span>
+                      <span>Speed: {forecast.hourly[0].wind_speed} m/s</span>
                     </div>
                   </div>
                 </div>

@@ -90,21 +90,37 @@ html{
     }
 
     .day_details{
-        // .others{
+        .others{
+            display: flex;
+            justify-content: space-around;
 
-        // }
+            div{
+
+                .icon{
+                    font-size: 30px;
+                }
+                margin: 20px auto;
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
         .humidity , .wind{
             display: flex;
             flex-direction: column;
             div{
+                .section{
+                    color: red;
+                }
                 display: flex;
-                justify-content: space-around;
+                justify-content:space-around;
                 align-items: center;
                 flex-direction: row;
                 div{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: space-around;
                     
                     #humidity_value{
                         font-size: 60px;
@@ -112,9 +128,11 @@ html{
 
                     .windmill{
                         width: 30vw;
-                        
                         height: 150px;
-
+                        @media (min-width:800px) {
+                            height: 300px;
+                            // text-shadow: 20px 20px #565454;
+                        }
                     }
 
                 }
