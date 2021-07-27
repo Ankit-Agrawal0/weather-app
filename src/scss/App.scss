@@ -45,31 +45,33 @@
      .Clear{
         @extend %background;
         // background-image: url('https://im2.ezgif.com/tmp/ezgif-2-46d40143c207.gif');
-        background-image: url('https://media.istockphoto.com/photos/clear-blue-sky-background-with-scattered-clouds-picture-id184304316?k=6&m=184304316&s=612x612&w=0&h=Y3daH7tigcvjNSI7dYKWiT2EWGQ14XHkxdHLqkTpaSU=');
+        background-image: url('https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
      }
      .Mist{
         @extend %background;
-         background-image: url('https://im4.ezgif.com/tmp/ezgif-4-d143cc7ce417.gif')
+        //  background-image: url('https://im4.ezgif.com/tmp/ezgif-4-d143cc7ce417.gif')
+        background-image: url('https://images.pexels.com/photos/2966315/pexels-photo-2966315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
      }
      .Clouds{
         @extend %background;
         //  background-image: url('https://im2.ezgif.com/tmp/ezgif-2-e4b28fb7f33e.gif');
-        background-image: url('https://images.pexels.com/photos/4203094/pexels-photo-4203094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+        background-image: url('https://images.pexels.com/photos/268917/pexels-photo-268917.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
         //  background-image: url('https://media.istockphoto.com/photos/view-of-a-clowdy-sky-with-dark-blue-clouds-before-the-rain-picture-id1180934764?k=6&m=1180934764&s=612x612&w=0&h=fi3yUzoBRUTzI7fNesM3y5hbkKYvLSM8UQkTcljxCAk=');
      }
      .Haze{
         @extend %background;
         // background-image: url('https://thumbs.gfycat.com/BrilliantEmotionalBagworm.webp');
-        background-image: url('https://media.istockphoto.com/photos/misty-mountain-landscape-picture-id1009702398?k=6&m=1009702398&s=612x612&w=0&h=q0L3QEMl1aQJra383AMB35S6HbxX2nt7W1afIxRbh04=')
+        background-image: url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
      }
      .Thunderstorm{
         @extend %background;
         // background-image: url('https://im4.ezgif.com/tmp/ezgif-4-6e27f3bdb57d.gif');
-        background-image: url('https://media.istockphoto.com/photos/lightning-bolt-storm-picture-id1060120946?k=6&m=1060120946&s=612x612&w=0&h=gNEcciKDijrBkZNV-57a19HAq-GCXejfPUNcsGBgntc=')
+        background-image: url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
      }
      .Rain{
         @extend %background;
-         background-image: url('https://media.tenor.com/images/b3ba46ee344185a797bd6fc5f032259a/tenor.gif');
+        //  background-image: url('https://media.tenor.com/images/b3ba46ee344185a797bd6fc5f032259a/tenor.gif');
+        background-image: url('https://images.pexels.com/photos/107583/pexels-photo-107583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
         //  background-image: url('https://media.tenor.com/images/76fc730e26692419829f97116631736f/tenor.gif');
      }
     .header{
