@@ -1,10 +1,9 @@
 .SECTION{
     height: 100vh;
-    background:transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
-    top: 0;
-    right: 0;
+    background-color: #304860;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url('https://i.pinimg.com/originals/0e/f3/bb/0ef3bb66d9216fffcea9022628f7bb26.gif');
+   
 }

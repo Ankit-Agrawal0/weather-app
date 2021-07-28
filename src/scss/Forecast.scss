@@ -16,8 +16,8 @@ html{
             overflow-x: scroll;
             white-space: nowrap;
             scrollbar-width: thin;
-            border-bottom: 2px solid #565454;
-            border-top:  2px solid #565454;
+            border-bottom: 2px solid #3a393963;
+            border-top:  2px solid #3332327e;
             padding: 10px;
         
 
@@ -75,7 +75,7 @@ html{
                 justify-content: space-between;
                 align-items: center;
                 width: 90vw;
-                border-bottom: 1px solid #565454;
+                border-bottom: 1px solid #3a383885;
 
                 &:hover{
                     transform: scale(1.05);
@@ -93,11 +93,24 @@ html{
         .others{
             display: flex;
             justify-content: space-around;
-
+            width: 100vw;
+            
+            border-bottom: 1px rgba(61, 61, 61, 0.525) solid;
             div{
-
+                &:hover{
+                    transform: scale(1.3);
+                }
                 .icon{
                     font-size: 30px;
+                }
+                @media (max-width:600px) {
+                    .icon{
+                        font-size: 25px;
+                    }
+                    span{
+                        font-size: 10px;
+                    }
+                    
                 }
                 margin: 20px auto;
                 display: flex;
@@ -108,6 +121,9 @@ html{
         .humidity , .wind{
             display: flex;
             flex-direction: column;
+            h1{
+                font-weight: 300;
+            }
             div{
                 .section{
                     color: red;
