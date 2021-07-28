@@ -48,32 +48,38 @@
         @extend %background;
         // background-image: url('https://im2.ezgif.com/tmp/ezgif-2-46d40143c207.gif');
         background-image: url('https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
      }
-     .Mist{
+     .Mist, .Fog{
         @extend %background;
         //  background-image: url('https://im4.ezgif.com/tmp/ezgif-4-d143cc7ce417.gif')
-        background-image: url('https://images.pexels.com/photos/2966315/pexels-photo-2966315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+        background-image: url('https://images.pexels.com/photos/2966315/pexels-photo-2966315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/2966315/pexels-photo-2966315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
      }
      .Clouds{
         @extend %background;
         //  background-image: url('https://im2.ezgif.com/tmp/ezgif-2-e4b28fb7f33e.gif');
-        background-image: url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+        background-image: url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
         //  background-image: url('https://media.istockphoto.com/photos/view-of-a-clowdy-sky-with-dark-blue-clouds-before-the-rain-picture-id1180934764?k=6&m=1180934764&s=612x612&w=0&h=fi3yUzoBRUTzI7fNesM3y5hbkKYvLSM8UQkTcljxCAk=');
      }
      .Haze{
         @extend %background;
         // background-image: url('https://thumbs.gfycat.com/BrilliantEmotionalBagworm.webp');
-        background-image: url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')
+        background-image: url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
      }
      .Thunderstorm{
         @extend %background;
         // background-image: url('https://im4.ezgif.com/tmp/ezgif-4-6e27f3bdb57d.gif');
-        background-image: url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+        background-image: url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
      }
      .Rain{
         @extend %background;
         //  background-image: url('https://media.tenor.com/images/b3ba46ee344185a797bd6fc5f032259a/tenor.gif');
-        background-image: url('https://images.pexels.com/photos/107583/pexels-photo-107583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+        background-image: url('https://images.pexels.com/photos/107583/pexels-photo-107583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-image: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0, 0, 0, 0.527) ), url('https://images.pexels.com/photos/107583/pexels-photo-107583.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
         //  background-image: url('https://media.tenor.com/images/76fc730e26692419829f97116631736f/tenor.gif');
      }
     .header{
@@ -81,32 +87,36 @@
         flex-wrap: wrap;
         justify-content: space-around;
         padding: 20px;
-        &:hover{
-            transform: scale(1.08);
-        }
+        
         .logo{
             min-width: 200px;
            // font-style: italic; 
+           &:hover{
+            transform: scale(1.08);
+        }
         }
         .form{
             width: 70vw;
+            &:hover{
+                transform: scale(1.08);
+            }
         }
     }
 
 
     .main{
-        background-blend-mode: screen;
+        
         .city_name{
             @extend %flex;
-            // margin: 20px auto 10px auto;
+            // margin: 20px auto 1px auto;
             font-size: 3rem;
             font-weight: 500;
             &:hover{
                 transform: scale(1.08);
             }
            .main_logo{
-            filter:contrast(200%);
-            animation: icon 1s linear infinite;
+                filter:contrast(200%);
+                animation: icon 1s linear infinite;
            }
            @keyframes icon {
             0%{
@@ -120,6 +130,10 @@
                 transform: scale(1);
             }
         }
+        }
+        .country{
+            margin: -25px auto 0 auto;
+            color: rgb(185, 179, 179);
         }
         .temp{ 
             font-size: 5rem;

@@ -5,8 +5,8 @@ import ".././scss/Forecast.scss";
 
 const Forcast = ({ lat, lon, details }) => {
   const [forecast, setForecast] = useState("");
-  console.log(lat, lon);
-
+  // console.log(lat, lon);
+ let country= new Intl.DisplayNames(['en'], {type: 'region'})
   console.log(forecast);
   console.log(details);
   const error = {
@@ -32,17 +32,18 @@ const Forcast = ({ lat, lon, details }) => {
               <div className="main">
                 <div className="city_name-div">
                   <h1 className="city_name">
-                    {details.name}
+                    {details.name} 
                     <img
                       className="main_logo"
                       src={`http://openweathermap.org/img/wn/${details.weather[0].icon}@2x.png`}
                       alt={details.weather[0].description}
                     />
                   </h1>
+                  <p className="country">{country.of(details.sys.country)}</p>
                 </div>
 
                 <span className="temp">
-                  {details.main.temp} <sup>°</sup>C
+                  {Math.round(details.main.temp)} <sup>°</sup>C
                 </span>
                 <p className="description">{details.weather[0].description}</p>
                 <p>
@@ -59,26 +60,27 @@ const Forcast = ({ lat, lon, details }) => {
               <div className="day_details">
                 <div className="others">
                   <div>
-                  <i class="icon fas fa-cloud-rain"></i>
-                    <span>Precipitation <br /> {forecast.hourly[0].pop}%</span>
+                  <i className="icon fas fa-cloud-rain"></i>
+                    <span>Precipitation <br /> {forecast.hourly[0].pop *100}%</span>
                   </div>
 
                   <div>
-                    <i class="icon fas fa-tachometer-alt"></i> 
+                    <i className="icon fas fa-tachometer-alt"></i> 
                   <span>Pressure <br />{forecast.hourly[0].pressure} hPa </span>
                   </div>
                   <div>
-                  <i class="icon fas fa-cloud"></i>
+                  <i className="icon fas fa-cloud"></i>
                   <span>Cloudiness <br /> {forecast.hourly[0].clouds} %</span>
                   </div>
                   <div>
-                  <i class="icon fas fa-eye"></i>
+                  <i className="icon fas fa-eye"></i>
                     <span>Visibility <br />{forecast.hourly[0].visibility}m</span>
                   </div>
                 </div>
             
                 <div className="humidity">
                   <h1 className='section'>Comfort Level</h1>
+                  <hr />
                   <div>
                     <div>
                       <span>Humidity</span>
@@ -91,9 +93,11 @@ const Forcast = ({ lat, lon, details }) => {
                       <span>UV: {forecast.hourly[0].uvi}</span>
                     </div>
                   </div>
+                  <hr />
                 </div>
                 <div className="wind">
                   <h1 className='section'>Wind</h1>
+                  <hr />
                   <div>
                     <div>
                       {/* <img src="https://www.pinclipart.com/picdir/big/73-735391_wind-turbine-blades-png-jpg-free-download-wind.png" alt="" /> */}
@@ -111,6 +115,7 @@ const Forcast = ({ lat, lon, details }) => {
                   </div>
                 </div>
                 <div className="sun"></div>
+                <div className="moon"></div>
               </div>
             </div>
           )
