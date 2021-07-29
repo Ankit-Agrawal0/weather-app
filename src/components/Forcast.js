@@ -13,7 +13,10 @@ const Forcast = ({ lat, lon, details }) => {
     cod: "404",
     message: "city not found",
   };
-
+  const secondsToTime = (seconds)=> {
+    var time= new Date(seconds * 1000).toLocaleTimeString()
+    return time
+}
   useEffect(() => {
     const getForecast = async () => {
       const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=eb4a9ef0a88caa72df8d36773173ddb3&units=metric`;
@@ -56,7 +59,7 @@ const Forcast = ({ lat, lon, details }) => {
 
               <Hourly data={forecast.hourly} />
               <Daily data={forecast.daily} />
-
+          
               <div className="day_details">
                 <div className="others">
                   <div>
@@ -79,8 +82,8 @@ const Forcast = ({ lat, lon, details }) => {
                 </div>
             
                 <div className="humidity">
-                  <h1 className='section'>Comfort Level</h1>
-                  <hr />
+                  <h1 className='section'> Comfort Level  <i class="fas fa-tint"></i></h1>
+                 
                   <div>
                     <div>
                       <span>Humidity</span>
@@ -89,15 +92,16 @@ const Forcast = ({ lat, lon, details }) => {
                       </span>
                     </div>
                     <div>
-                      <span>feels like: {forecast.hourly[0].feels_like}°C</span>
+                      <span>feels like: {forecast.hourly[0].feels_like}°</span>
                       <span>UV: {forecast.hourly[0].uvi}</span>
                     </div>
                   </div>
-                  <hr />
+                  {/* <hr /> */}
                 </div>
                 <div className="wind">
-                  <h1 className='section'>Wind</h1>
-                  <hr />
+                  <h1 className='section'>Wind  <i class="fas fa-wind"></i></h1>
+                  {/* ▷ */}
+                 
                   <div>
                     <div>
                       {/* <img src="https://www.pinclipart.com/picdir/big/73-735391_wind-turbine-blades-png-jpg-free-download-wind.png" alt="" /> */}
@@ -114,8 +118,25 @@ const Forcast = ({ lat, lon, details }) => {
                     </div>
                   </div>
                 </div>
-                <div className="sun"></div>
-                <div className="moon"></div>
+                <div className="sun_moon">
+
+                  <div className='sun'>
+                      <i class="icon fas fa-sun"></i>
+                      <div>
+                        <p>Sunrise: {secondsToTime(forecast.daily[0].sunrise)}</p>
+                        <p>Sunset: {secondsToTime(forecast.daily[0].sunset)}</p>
+                      </div>
+                  </div>
+                  <div className="moon">
+                      <i class="icon fas fa-moon"></i>
+                      <div>
+                        <p>Moonrise: {secondsToTime(forecast.daily[0].moonrise)}</p>
+                        <p>Moonset: {secondsToTime(forecast.daily[0].moonset)}</p>
+                      </div>
+                  </div>
+
+                </div>
+                
               </div>
             </div>
           )

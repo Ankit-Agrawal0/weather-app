@@ -86,7 +86,7 @@ const Weather = () => {
                     />
                     <button type="submit">🔎</button>
                  </form> */}
-        <form onSubmit={handleSubmit} className="input-group mb-3 form">
+        <form onSubmit={handleSubmit} data-netlify="true" className="input-group mb-3 form">
           <input
             type="search"
             className="form-control"
