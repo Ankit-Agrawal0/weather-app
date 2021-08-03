@@ -7,8 +7,8 @@ const Forcast = ({ lat, lon, details }) => {
   const [forecast, setForecast] = useState("");
   // console.log(lat, lon);
  let country= new Intl.DisplayNames(['en'], {type: 'region'})
-  console.log(forecast);
-  console.log(details);
+  // console.log(forecast);
+  // console.log(details);
   const error = {
     cod: "404",
     message: "city not found",
@@ -56,7 +56,7 @@ const Forcast = ({ lat, lon, details }) => {
 
                 {/* <p>{weather.weather[0].description}</p> */}
               </div>
-
+              <p className="last">Last updated at {secondsToTime(forecast.current.dt)}</p>
               <Hourly data={forecast.hourly} />
               <Daily data={forecast.daily} />
           
@@ -80,6 +80,7 @@ const Forcast = ({ lat, lon, details }) => {
                     <span>Visibility <br />{forecast.hourly[0].visibility}m</span>
                   </div>
                 </div>
+                  <hr />
             
                 <div className="humidity">
                   <h1 className='section'> Comfort Level  <i class="fas fa-tint"></i></h1>
@@ -91,13 +92,13 @@ const Forcast = ({ lat, lon, details }) => {
                         {forecast.hourly[0].humidity}%
                       </span>
                     </div>
-                    <div>
+                    <div className='content'>
                       <span>feels like: {forecast.hourly[0].feels_like}°</span>
                       <span>UV: {forecast.hourly[0].uvi}</span>
                     </div>
                   </div>
-                  {/* <hr /> */}
                 </div>
+                <hr />
                 <div className="wind">
                   <h1 className='section'>Wind  <i class="fas fa-wind"></i></h1>
                   {/* ▷ */}
@@ -112,12 +113,13 @@ const Forcast = ({ lat, lon, details }) => {
                       />
                       {/* <img className='windmill' src="https://media1.giphy.com/media/SQSxROvkJ74zEtzB0Q/giphy.gif?cid=790b7611e25126e47859c545227353d0f6f7c2c8fdc3e835&rid=giphy.gif&ct=s"></img> */}
                     </div>
-                    <div>
+                    <div className='content'>
                       <span>Direction: {forecast.hourly[0].wind_deg}°</span>
-                      <span>Speed: {forecast.hourly[0].wind_speed} m/s</span>
+                      <span>Speed: {Math.round(forecast.hourly[0].wind_speed * 18/5)} km/s</span>
                     </div>
                   </div>
                 </div>
+                  <hr />
                 <div className="sun_moon">
 
                   <div className='sun'>
@@ -127,6 +129,7 @@ const Forcast = ({ lat, lon, details }) => {
                         <p>Sunset: {secondsToTime(forecast.daily[0].sunset)}</p>
                       </div>
                   </div>
+                  <hr />
                   <div className="moon">
                       <i class="icon fas fa-moon"></i>
                       <div>

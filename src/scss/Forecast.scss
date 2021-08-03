@@ -1,232 +1,264 @@
-html{
-    scroll-behavior: smooth;
-    user-select: none;
+html {
+  scroll-behavior: smooth;
+  user-select: none;
 
-    &::-webkit-scrollbar {
-        display: none;
-     }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-%boxes{
-    display: flex;
-    // border: 1px rgba(61, 61, 61, 0.825) solid;
-    // border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.319);
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.581));
-    // margin: 30px auto;
-    // padding: 20px;
+%boxes {
+  display: flex;
+  // border: 1px rgba(61, 61, 61, 0.825) solid;
+  // border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.319);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.581));
+  // margin: 30px auto;
+  // padding: 20px;
 }
-.forecast{
+.forecast {
+  .last {
+    color: rgb(44, 43, 43);
+    font-size: smaller;
+    text-align: left;
+    margin-bottom: -3.5px;
+    font-weight: 700;
+  }
 
+  .Hourly {
+    .map {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      scrollbar-width: thin;
+      border-bottom: 2px solid #3a393963;
+      border-top: 2px solid #3332327e;
+      padding: 10px;
 
-    .Hourly{
-
-        .map{
-            display: flex;
-            overflow-x: scroll;
-            white-space: nowrap;
-            scrollbar-width: thin;
-            border-bottom: 2px solid #3a393963;
-            border-top:  2px solid #3332327e;
-            padding: 10px;
-        
-
-            .hour{
-                display: flex;
-                flex-direction: column;
-                height: 100px;
-                margin: 10px;
-
-                &:hover{
-                    transform: scale(1.2);
-                }
-                span, p{
-                    font-size: small;
-                }
-                .icon{
-                    height: 70px;
-                    filter:contrast(200%);
-                }
-            }
-            &::-webkit-scrollbar {
-                width: 10px;
-                
-            }
-            
-    /* Track */
-            &::-webkit-scrollbar-track {
-                box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-                border-radius: 10px;
-                border-radius: 10px;
-            
-            }
-    
-    /* Handle */
-            &::-webkit-scrollbar-thumb {
-                width: 10px !important;
-                border-radius: 10px;
-                background: rgba(88, 88, 88, 0.534); 
-                box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-            }
-            &::-webkit-scrollbar-thumb:window-inactive {
-                background: rgba(73, 73, 73, 0.212); 
-            }
-        }
-    
-    }
-    .daily{
-        .map2{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            .day{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                width: 90vw;
-                border-bottom: 1px solid #3a383885;
-
-                &:hover{
-                    transform: scale(1.05);
-                }
-
-                .icon{
-                    position: relative;
-                    margin: 1px auto;
-                    height: 60px;
-                    filter:contrast(200%);
-                }
-            }
-        }
-    }
-
-    .day_details{
-        @extend %boxes;
+      .hour {
+        display: flex;
         flex-direction: column;
-        .others{
-            display: flex;
-            margin: auto;
-            padding: 20px;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 85vw;
-            overflow-x: visible;
-            border-bottom: 2px gray solid;
-            @media (min-width:600px) {
-                width: 85vw;
-            }
-            div{
-                &:hover{
-                    transform: scale(1.3);
-                }
-                .icon{
-                    font-size: 30px;
-                }
-                @media (max-width:600px) {
-                    .icon{
-                        font-size: 25px;
-                    }
-                    span{
-                        font-size: 10px;
-                    }
-                    
-                }
-               
-                display: flex;
-                flex-direction: column;
+        height: 100px;
+        margin: 10px;
 
-            }
+        &:hover {
+          transform: scale(1.2);
         }
-        .humidity , .wind{
-            display: flex;
-            margin: auto;
-            padding: 20px;
+        span,
+        p {
+          font-size: small;
+        }
+        .icon {
+          height: 70px;
+          filter: contrast(200%);
+        }
+      }
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        width: 10px !important;
+        border-radius: 10px;
+        background: rgba(88, 88, 88, 0.534);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+      }
+      &::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(73, 73, 73, 0.212);
+      }
+    }
+  }
+  .daily {
+    .map2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .day {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90vw;
+        border-bottom: 1px solid #3a383885;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        .icon {
+          position: relative;
+          margin: 1px auto;
+          height: 60px;
+          filter: contrast(200%);
+        }
+      }
+    }
+  }
+
+  .day_details {
+    @extend %boxes;
+    flex-direction: column;
+
+    hr {
+      width: 85vw;
+      color: rgb(165, 165, 165);
+      align-self: center;
+      height: 3px;
+      border-radius: 20px;
+    }
+    .others {
+      display: flex;
+      margin: auto;
+      padding: 20px;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100vw;
+      overflow-x: visible;
+      // border-bottom: 2px gray solid;
+      @media (min-width: 600px) {
+        width: 85vw;
+      }
+      div {
+        &:hover {
+          transform: scale(1.3);
+        }
+        .icon {
+          font-size: 30px;
+        }
+        @media (max-width: 600px) {
+          .icon {
+            font-size: 25px;
+          }
+          span {
+            font-size: 10px;
+          }
+        }
+
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .humidity,
+    .wind {
+      display: flex;
+      margin: auto;
+      padding: 20px;
+      flex-direction: column;
+      width: 100vw;
+      // border-bottom: 2px gray solid;
+      h1 {
+        font-weight: 500;
+        font-size: 1.8rem;
+        color: whitesmoke;
+        // margin: auto auto 5px 18px;
+        text-align: left;
+      }
+      .arrow {
+        font-size: 2rem;
+      }
+      div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+
+          #humidity_value {
+            font-size: 60px;
+          }
+
+          .windmill {
+            width: 30vw;
+            height: 150px;
+            @media (min-width: 800px) {
+              height: 250px;
+              width: 15vw;
+              // text-shadow: 20px 20px #565454;
+            }
+          }
+        }
+        .content{
+            display: flex !important;
             flex-direction: column;
-            width: 85vw;
-            border-bottom: 2px gray solid;
-            h1{
-                font-weight: 500;
-                font-size: 1.8rem;
-                color: whitesmoke;
-                // margin: auto auto 5px 18px;
-                text-align: left;
-                
-            }
-            .arrow{
-                font-size: 2rem;
-            }
-            div{
-                .section{
-                    color: red;
-                }
-                display: flex;
-                justify-content:space-around;
-                align-items: center;
-                flex-direction: row;
-                div{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-around;
-                    
-                    #humidity_value{
-                        font-size: 60px;
-                    }
+            justify-content: flex-start;
+            align-items: flex-start;
 
-                    .windmill{
-                        width: 30vw;
-                        height: 150px;
-                        @media (min-width:800px) {
-                            height:250px;
-                            width: 15vw;
-                            // text-shadow: 20px 20px #565454;
-                        }
-                    }
-
-                }
+            span{
+                font-size: 1.2rem;
             }
         }
-        .sun_moon{
-            display: flex;
-            margin: 30px auto;
-            padding: 20px;
-            // border-bottom: 2px gray solid;
-            width: 85vw;
-            justify-content: center;
-            flex-wrap: wrap;
-            .sun,  .moon{
-                width: 35vw;
-                padding: 15px;
-                @media (max-width:600px) {
-                    width: 70vw;
-                }
-                .icon{
-                    font-size: 5rem;
-                    animation: icon 1s linear infinite;
-                }
-                div{
-                    padding: 20px;
 
-                    p{
-                        font-size: 2rem;
-                        margin: auto;
-                        // width: 100vw;
-                        text-align: center;
-                    }
-                }
-            }
-           
-        }
+      }
     }
+    .sun_moon {
+      display: flex;
+      margin: 30px auto;
+      padding: 20px;
+      // border-bottom: 2px gray solid;
+      width: 100vw;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (min-width:600px) {
+        hr {
+            border: none;
+            border-left: 1px solid hsla(200, 10%, 50%, 100);
+            height: 150px;
+            width: 2px;
+          }
+      }
+     
+      .sun,
+      .moon {
+        width: 35vw;
+        padding: 15px;
 
-    
+        @media (max-width:600px) {
+            width: 70vw;
+        }
+        .icon {
+          font-size: 5rem;
+          animation: icon 1s linear infinite;
+        }
+        div {
+          padding: 20px;
+
+          p {
+            font-size: 1rem;
+            margin: auto;
+            // width: 100vw;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
-@media (max-width:600px) {
-    html{
-        font-size: 65%;
-    }
-    .wind h1{
-        font-size: 1rem;
-    }
+@media (max-width: 600px) {
+  html {
+    font-size: 85%;
+  }
+  .wind h1 {
+    font-size: 1rem;
+  }
+
+  .last {
+    color: gray;
+    font-size: smaller;
+  }
+  .day_details .sun_moon .sun, .moon{
+    width: 70vw;
+  }
 }

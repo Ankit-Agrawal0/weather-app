@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Daily = ({ data }) => {
+    // data.shift()
     const secondsToTime = (seconds)=> {
         var date= new Date(seconds * 1000).toLocaleDateString();
         return date
